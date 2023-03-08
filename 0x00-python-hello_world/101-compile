@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ -z "$PYFILE" ]; then
+    echo "Error: Environment variable PYFILE is not set."
+    exit 1
+fi
+
+if [ ! -f "$PYFILE" ]; then
+    echo "Error: File $PYFILE does not exist."
+    exit 1
+fi
+
+PYC_FILE="${PYFILE}c"
+
+echo "Compiling $PYFILE ..."
+python3 -m py_compile "$PYFILE"
+
+if [ ! -f "$PYC_FILE" ]; then
+    echo "Error: Compilation failed."
+    exit 1
+fi
+
+echo "Compilation successful. Output file: $PYC_FILE"
