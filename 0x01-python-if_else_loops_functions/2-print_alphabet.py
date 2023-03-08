@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print("abcdefghijklmnopqrstuvwxyz", end='')
+for c in range(97,122):
+    print(f"{chr(c)}",end='')
