@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+import dis
 def magic_calculation(a, b):
-  #  add, sub = __import__('magic_calculation_102', globals(), locals(), ['add', 'sub'], 0)
     from magic_calculation_102 imprt add, sub
     if a < b:
         c = add(a, b)
@@ -9,3 +9,5 @@ def magic_calculation(a, b):
         return c
     else:
         return sub(a, b)
+
+dis.dis(magic_calculation)
